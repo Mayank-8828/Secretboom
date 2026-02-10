@@ -7,12 +7,15 @@ import Background from './components/Background';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import ConnectionStatus from './components/ConnectionStatus';
+
 function App() {
     return (
         <BrowserRouter>
             <Background />
             <Header />
             <ThemeToggle />
+            <ConnectionStatus />
             <div className="content-wrapper">
                 <Routes>
                     <Route path="/" element={<LandingPage />} />

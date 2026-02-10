@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function ResultView({ poll }) {
+export default function ResultView({ poll, onPlayAgain }) {
     const [winner, setWinner] = useState(null);
     const [spinning, setSpinning] = useState(false);
 
@@ -10,6 +10,10 @@ export default function ResultView({ poll }) {
     let total = 0;
     let max = 0;
     let winners = [];
+
+    if (!poll || !poll.votes) {
+        return <div className="text-center p-3">No results data available</div>;
+    }
 
     if (poll.type === 'multiple') {
         poll.votes.forEach(v => {
@@ -146,6 +150,16 @@ export default function ResultView({ poll }) {
                         </motion.div>
                     )}
                 </div>
+            )}
+
+            {onPlayAgain && (
+                <button
+                    className="btn-secondary mt-3 mb-2"
+                    onClick={onPlayAgain}
+                    style={{ background: 'var(--surface)', border: '1px solid var(--border)', justifyContent: 'center' }}
+                >
+                    🔄 Play Again / Re-roll
+                </button>
             )}
 
             <a

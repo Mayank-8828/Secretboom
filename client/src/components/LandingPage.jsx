@@ -57,6 +57,7 @@ export default function LandingPage() {
     const [sliderMin, setSliderMin] = useState(1);
     const [sliderMax, setSliderMax] = useState(10);
     const [sliderStep, setSliderStep] = useState(1);
+    const [timer, setTimer] = useState(0); // 0 = no timer
     const [creating, setCreating] = useState(false);
 
     const next = () => setStep(s => Math.min(s + 1, STEPS.length - 1));
@@ -126,6 +127,9 @@ export default function LandingPage() {
             optionsImages: filteredOptionsImages,
             revealTrigger,
             mode,
+            revealTrigger,
+            mode,
+            timer, // Send timer to server
             sliderConfig: questionType === 'slider' ? { min: Number(sliderMin), max: Number(sliderMax), step: Number(sliderStep) } : undefined,
         }, (res) => {
             setCreating(false);
