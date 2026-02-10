@@ -147,6 +147,16 @@ export default function ResultView({ poll }) {
                     )}
                 </div>
             )}
+
+            <a
+                href="https://buymeacoffee.com/mayankkariya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bmc-button"
+            >
+                <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" className="bmc-icon" style={{ width: 'auto', height: '24px' }} />
+                <span>Buy me a coffee</span>
+            </a>
         </div>
     );
 }
