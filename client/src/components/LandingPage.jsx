@@ -127,8 +127,7 @@ export default function LandingPage() {
             optionsImages: filteredOptionsImages,
             revealTrigger,
             mode,
-            revealTrigger,
-            mode,
+
             timer, // Send timer to server
             sliderConfig: questionType === 'slider' ? { min: Number(sliderMin), max: Number(sliderMax), step: Number(sliderStep) } : undefined,
         }, (res) => {
